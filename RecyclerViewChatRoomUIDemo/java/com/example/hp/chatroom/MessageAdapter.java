@@ -39,7 +39,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
         View view = LayoutInflater.from(parent.getContext()).
                 inflate(R.layout.msg_item,parent,false);
         ViewHolder holder = new ViewHolder(view);
-        //holder.setIsRecyclable(false);    禁止holder复用
+//        holder.setIsRecyclable(false);    //禁止holder复用
         return holder;
     }
 
@@ -50,7 +50,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             holder.rightMeg.setText(message.getMessage());
             holder.leftMeg.setVisibility(View.GONE);
             holder.leftLayout.setVisibility(View.GONE);
-        }else{//   0  Received
+        }else{//   1  Sent
             holder.leftMeg.setText(message.getMessage());
             holder.rightMeg.setVisibility(View.GONE);
             holder.rightLayout.setVisibility(View.GONE);
