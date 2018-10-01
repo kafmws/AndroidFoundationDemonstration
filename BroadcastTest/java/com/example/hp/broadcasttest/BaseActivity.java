@@ -11,7 +11,7 @@ import java.util.zip.Inflater;
 
 public class BaseActivity extends AppCompatActivity {
 
-    private LocalReceiver receiver = new LocalReceiver();
+    private LocalReceiver receiver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

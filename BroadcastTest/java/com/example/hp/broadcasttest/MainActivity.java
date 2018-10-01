@@ -33,9 +33,8 @@ public class MainActivity extends BaseActivity {
 
 class LocalReceiver extends BroadcastReceiver{
 
-    @Override
-    public void onReceive(final Context context, Intent intent) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+    private void method(final Context context){
+        final AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Warning");
         builder.setCancelable(false);
         builder.setMessage("Your account has logan somewhere.Please try login again.");
@@ -43,6 +42,7 @@ class LocalReceiver extends BroadcastReceiver{
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Toast.makeText(context,"点了也没用快点OK下线吧",Toast.LENGTH_SHORT).show();
+                method(context);
             }
         });
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -54,5 +54,12 @@ class LocalReceiver extends BroadcastReceiver{
             }
         });
         builder.show();
+    }
+
+
+
+    @Override
+    public void onReceive(final Context context, Intent intent) {
+            method(context);
     }
 }
